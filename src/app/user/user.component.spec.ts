@@ -2,8 +2,8 @@
 
 import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { UserComponent } from './user.component';
-import { UserService } from "./user.service";
-import { DataService } from "../shared/data.service";
+import { UserService } from './user.service';
+import { DataService } from '../shared/data.service';
 
 describe('Component: User', () => {
   beforeEach(() => {
@@ -47,7 +47,7 @@ describe('Component: User', () => {
     let fixture = TestBed.createComponent(UserComponent);
     let app = fixture.debugElement.componentInstance;
     let dataService = fixture.debugElement.injector.get(DataService);
-    let spy = spyOn(dataService, 'getDetails')
+    spyOn(dataService, 'getDetails')
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     expect(app.data).toBe(undefined);
@@ -57,7 +57,7 @@ describe('Component: User', () => {
     let fixture = TestBed.createComponent(UserComponent);
     let app = fixture.debugElement.componentInstance;
     let dataService = fixture.debugElement.injector.get(DataService);
-    let spy = spyOn(dataService, 'getDetails')
+    spyOn(dataService, 'getDetails')
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     fixture.whenStable().then(() => {
@@ -69,7 +69,7 @@ describe('Component: User', () => {
     let fixture = TestBed.createComponent(UserComponent);
     let app = fixture.debugElement.componentInstance;
     let dataService = fixture.debugElement.injector.get(DataService);
-    let spy = spyOn(dataService, 'getDetails')
+    spyOn(dataService, 'getDetails')
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     tick();
